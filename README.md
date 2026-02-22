@@ -39,5 +39,34 @@ Totall infrastructure we want will be created by terraform
      
      Change: PasswordAuthentication yes
   10. sudo systemctl reload sshd
+  11. Create a folder: '.ssh'
+  12. Execute: ssh-keygen
+  13. Copy id_rsa.pub content and paste on both Docker and Eks-host servers at location:
+      'demo-user>.ssh/authorized_keys
+      
+           ** Adding Docker and EKS servers under Ansible for configuration Management**
+
+                Steps to add docker and EKS server under Ansible
+
+                      1.Create new user ex: demo-user (useradd)
+                      2.create password ex: demo (paswwd demo-user)
+                      3.switch user to demo-user
+                      4.Create a folder: '.ssh'
+                      5.Create a file inside '.ssh': 'authorized_keys'
+
+   14. vi /etc/ansible/hosts
+   15. Add Docker and EKS private address
+       
+         [docker]
+       
+          Private IP
+       
+        [eks]
+       
+          Private IP
+  16. Check pings for servers
+        ansible docker -m ping
+        ansible EKS -m ping
+        
      
 =======================================================================
