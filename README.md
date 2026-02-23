@@ -48,6 +48,8 @@ Totall infrastructure we want will be created by terraform
 
                 Steps to add docker and EKS server under Ansible
 
+        ( we have created demo-user to easy the copying file because have differenet servers of os ubuntu,amazonlinx which have different home user so sigle demo user will be on all servers)
+
                       1.Create new user ex: demo-user (useradd)
                       2.create password ex: demo (paswwd demo-user)
                       3.switch user to demo-user
@@ -65,8 +67,58 @@ Totall infrastructure we want will be created by terraform
        
           Private IP
   16. Check pings for servers
+      
         ansible docker -m ping
+      
         ansible EKS -m ping
         
      
 =======================================================================
+
+**Now will move to Jenkins for creating  master-slave architecture**
+
+  1. create a new node in jenkins
+  2. Label the node as "ansible-node"
+  3. Take below path from Ansible Workloads
+     
+      Home Directory: /home/demo-user/workloads
+     
+  4. Only Build jobs with Label Expressions matching this node
+  5. Launch method: Launch agents via SSH
+     
+     Host IP: Ansible Public IP
+     
+     Credentials:
+     
+            username: admin-user
+     
+            passwd: admin
+
+            Host Key Verification Strategy: Manually Trusted key verification Strategy
+
+            Availability: keep this agent online as much as possible
+
+            Save & Refresh
+
+    6. Install Maven plugin on Jenkins
+    7. Create a Pipeline Job  Ex: Amazon-site
+
+
+    =======================================================================
+
+    **DOCKER server requirements**
+
+      > After adding user in docker (demo-user) add that user docker group 
+      
+      usermod -aG docker demo-user
+
+
+    =======================================================================
+
+    **EKS Server requirements**
+
+    > install EKS setup in demo user
+    
+    
+
+
