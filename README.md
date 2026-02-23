@@ -100,24 +100,22 @@ Totall infrastructure we want will be created by terraform
 
             Save & Refresh
 
-    6. Install Maven plugin on Jenkins
-    7. Create a Pipeline Job  Ex: Amazon-site
+  6. Install Maven plugin on Jenkins
+  7. Create a Pipeline Job  Ex: Amazon-site
+     
+ ===============================================================   
 
+**DOCKER server requirements**
 
-    =======================================================================
-
-    **DOCKER server requirements**
-
-      > After adding user in docker (demo-user) add that user docker group 
+  After adding user in docker (demo-user) add that user docker group 
       
-      usermod -aG docker demo-user
+    usermod -aG docker demo-user
+      
+===============================================================
 
+**EKS Server requirements**
 
-    =======================================================================
-
-    **EKS Server requirements**
-
-    > install EKS setup in demo user
+    install EKS setup in demo user
     
     
 
