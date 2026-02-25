@@ -50,7 +50,7 @@ Totall infrastructure we want will be created by terraform
 
         ( we have created demo-user to easy the copying file because have differenet servers of os ubuntu,amazonlinx which have different home user so sigle demo user will be on all servers)
 
-                      1.Create new user ex: demo-user (useradd)
+                      1.Create new user ex: demo-user (useradd > for AmazonLinux, adduser > for ubuntu)
                       2.create password ex: demo (paswwd demo-user)
                       3.switch user to demo-user
                       4.Create a folder: '.ssh'
