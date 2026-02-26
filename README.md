@@ -86,7 +86,9 @@ Totall infrastructure we want will be created by terraform
   4. Only Build jobs with Label Expressions matching this node
   5. Launch method: Launch agents via SSH
      
-     Host IP: Ansible Public IP
+     Host IP: Ansible Private IP
+
+    Select Username with password
      
      Credentials:
      
